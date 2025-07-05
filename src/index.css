@@ -155,6 +155,10 @@
   background-color: hsl(142 71% 45%) !important;
 }
 
+.auth-page-override .text-white {
+  color: rgb(255 255 255) !important;
+}
+
 .auth-page-override .text-gray-900 {
   color: rgb(17 24 39) !important;
 }
