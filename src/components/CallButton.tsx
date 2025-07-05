@@ -186,10 +186,10 @@ const CallButton = ({ contact, onCall, onStatusUpdate }: CallButtonProps) => {
       size="sm"
       onClick={handleCall}
       disabled={isCallLoading}
-      className="bg-green-500 hover:bg-green-600 text-white"
+      className="bg-green-500 hover:bg-green-600 text-white flex items-center justify-between space-x-2 min-w-[80px]"
     >
-      <Phone className="w-4 h-4 mr-2" />
-      {isCallLoading ? "Calling..." : "Call"}
+      <Phone className="w-4 h-4" />
+      <span className="flex-1 text-center">{isCallLoading ? "Calling..." : "Call"}</span>
     </Button>
   );
 };

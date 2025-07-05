@@ -94,10 +94,10 @@ const TextButton = ({ contact }: TextButtonProps) => {
       size="sm"
       onClick={handleText}
       disabled={true}
-      className="bg-gray-400 hover:bg-gray-400 text-gray-600 cursor-not-allowed"
+      className="bg-gray-400 hover:bg-gray-400 text-gray-600 cursor-not-allowed flex items-center justify-between space-x-2 min-w-[70px]"
     >
-      <MessageSquare className="w-4 h-4 mr-2" />
-      Text
+      <MessageSquare className="w-4 h-4" />
+      <span className="flex-1 text-center">Text</span>
     </Button>
   );
 };
