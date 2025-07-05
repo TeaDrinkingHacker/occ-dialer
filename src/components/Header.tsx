@@ -1,4 +1,3 @@
-
 import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -73,8 +72,11 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
                 <img 
                   src="/lovable-uploads/8a49b33f-1191-4379-9e00-11217f4455fa.png" 
                   alt="OCC Logo" 
-                  className="w-full h-full object-cover bg-transparent"
-                  style={{ backgroundColor: 'transparent' }}
+                  className="w-full h-full object-cover"
+                  style={{ 
+                    filter: 'drop-shadow(0 0 0 transparent)',
+                    mixBlendMode: 'multiply'
+                  }}
                 />
               </div>
             ) : (
