@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
@@ -153,8 +152,7 @@ const CallerNumberSettings = () => {
             <Button
               onClick={handleSave}
               disabled={isSaving || !callerNumber.trim()}
-              className="flex items-center justify-between space-x-2 bg-green-500/10 text-green-600 hover:bg-green-500/20 border border-green-500/20 min-w-[100px]"
-              variant="outline"
+              className="bg-green-500 hover:bg-green-600 text-white flex items-center justify-between space-x-2 min-w-[100px]"
             >
               <Save className="w-4 h-4" />
               <span className="flex-1 text-center">{isSaving ? "Saving..." : "Save"}</span>
