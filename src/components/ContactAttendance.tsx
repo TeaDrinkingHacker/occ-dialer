@@ -61,7 +61,7 @@ const ContactAttendance = ({ contact, onAttendingChange, onCommentsChange }: Con
         />
         <label 
           htmlFor={`attend-${contact.id}`}
-          className="text-sm text-gray-700"
+          className="text-sm text-muted-foreground"
         >
           Confirmed to attend
         </label>
