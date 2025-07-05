@@ -1,4 +1,3 @@
-
 import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -69,11 +68,11 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-3">
             {isOccBasicTheme ? (
-              <div className="w-8 h-8 rounded-lg overflow-hidden">
+              <div className="w-10 h-10 rounded-lg overflow-hidden bg-transparent">
                 <img 
                   src="/lovable-uploads/8a49b33f-1191-4379-9e00-11217f4455fa.png" 
                   alt="OCC Logo" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             ) : (
