@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
@@ -32,20 +31,47 @@ const AuthPage = () => {
     }
   }, [user, authLoading, navigate]);
 
-  // Force light mode for auth page
+  // Force light mode for auth page and prevent theme overrides
   useEffect(() => {
     const html = document.documentElement;
-    const originalClasses = html.className;
+    const body = document.body;
     
-    // Remove dark class and force light mode
+    // Store original classes
+    const originalHtmlClasses = html.className;
+    const originalBodyClasses = body.className;
+    
+    // Force light mode - remove dark class and OCC theme
     html.classList.remove('dark');
+    body.classList.remove('occ-basic-theme');
+    
+    // Add a specific class to override any theme styles
+    body.classList.add('auth-page-override');
     
     // Cleanup function to restore original theme when leaving the page
     return () => {
+      // Remove our override class
+      body.classList.remove('auth-page-override');
+      
       // Restore the original theme when component unmounts
       const savedTheme = localStorage.getItem('app-theme') || 'basic';
-      if (savedTheme === 'dark' || savedTheme === 'occ-dark') {
-        html.classList.add('dark');
+      
+      // Remove existing theme classes
+      html.classList.remove('dark');
+      body.classList.remove('occ-basic-theme');
+      
+      // Apply saved theme
+      switch (savedTheme) {
+        case 'dark':
+        case 'occ-dark':
+          html.classList.add('dark');
+          break;
+        case 'occ-basic':
+          body.classList.add('occ-basic-theme');
+          break;
+        case 'basic':
+        default:
+          // Light theme is default, no additional classes needed
+          break;
       }
     };
   }, []);

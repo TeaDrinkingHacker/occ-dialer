@@ -122,3 +122,25 @@
 .system-status {
   background-color: hsl(142 71% 45%) !important;
 }
+
+/* Auth page override - force light theme styles */
+.auth-page-override {
+  background-color: rgb(249 250 251) !important;
+  color: rgb(17 24 39) !important;
+}
+
+.auth-page-override * {
+  color: inherit !important;
+}
+
+.auth-page-override .bg-green-500 {
+  background-color: hsl(142 71% 45%) !important;
+}
+
+.auth-page-override .text-gray-900 {
+  color: rgb(17 24 39) !important;
+}
+
+.auth-page-override .text-blue-600 {
+  color: rgb(37 99 235) !important;
+}
