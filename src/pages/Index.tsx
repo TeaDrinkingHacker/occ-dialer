@@ -67,8 +67,8 @@ const Index = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div>Loading...</div>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-foreground">Loading...</div>
       </div>
     );
   }
@@ -83,12 +83,12 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
       <main className="container mx-auto px-4 py-8">
         <ContactsList contacts={contacts} callSessions={callSessions} />
       </main>
-      <footer className="text-center py-4 text-gray-500 text-sm">
+      <footer className="text-center py-4 text-muted-foreground text-sm">
         OCC Secure Dialer v1.2 - All calls are logged and monitored for quality assurance
       </footer>
     </div>
