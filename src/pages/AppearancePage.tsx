@@ -18,19 +18,19 @@ const AppearancePage = () => {
       description: 'Clean and simple interface'
     },
     {
-      id: 'dark',
+      id: 'occ-basic',
       name: 'OCC Basic',
-      description: 'Basic theme but with OCC logos and color way'
+      description: 'Basic theme with OCC branding'
     },
     {
-      id: 'compact',
+      id: 'dark',
       name: 'Dark',
-      description: 'Space-efficient layout'
+      description: 'Basic dark theme'
     },
     {
-      id: 'colorful',
+      id: 'occ-dark',
       name: 'OCC Dark',
-      description: 'Vibrant and modern design'
+      description: 'Dark theme with OCC branding'
     }
   ];
 
