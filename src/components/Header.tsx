@@ -3,7 +3,7 @@ import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "luc
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
   DropdownMenu,
@@ -23,6 +23,22 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
+  const [isOccBasicTheme, setIsOccBasicTheme] = useState(false);
+
+  // Check for OCC Basic theme
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsOccBasicTheme(document.body.classList.contains('occ-basic-theme'));
+    };
+    
+    checkTheme();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    
+    return () => observer.disconnect();
+  }, []);
 
   const handleSignOut = async () => {
     await signOut();
@@ -52,9 +68,19 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-              <Phone className="w-5 h-5 text-white" />
-            </div>
+            {isOccBasicTheme ? (
+              <div className="w-8 h-8 rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/8a49b33f-1191-4379-9e00-11217f4455fa.png" 
+                  alt="OCC Logo" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                <Phone className="w-5 h-5 text-white" />
+              </div>
+            )}
             <div>
               <h1 className="text-xl font-semibold text-card-foreground">OCC Secure Dialer</h1>
               <p className="text-sm text-muted-foreground">Privacy-focused calling solution</p>
