@@ -10,7 +10,7 @@ interface ContactsListHeaderProps {
 const ContactsListHeader = ({ searchTerm, onSearchChange }: ContactsListHeaderProps) => {
   return (
     <div className="mb-8 flex items-center justify-between">
-      <h2 className="text-2xl font-semibold text-gray-900">Contact List</h2>
+      <h2 className="text-2xl font-semibold text-card-foreground">Contact List</h2>
       <div className="relative w-80">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
         <Input
