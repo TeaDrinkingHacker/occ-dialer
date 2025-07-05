@@ -118,6 +118,19 @@
   background-color: hsl(0 85% 45%) !important;
 }
 
+/* OCC Basic Theme - Override green tab styles to red */
+.occ-basic-theme .bg-green-50 {
+  background-color: hsl(0 100% 97%) !important;
+}
+
+.occ-basic-theme .text-green-600 {
+  color: hsl(0 85% 45%) !important;
+}
+
+.occ-basic-theme .border-green-500 {
+  border-color: hsl(0 85% 45%) !important;
+}
+
 /* Ensure system status dot stays green */
 .system-status {
   background-color: hsl(142 71% 45%) !important;
