@@ -32,6 +32,24 @@ const AuthPage = () => {
     }
   }, [user, authLoading, navigate]);
 
+  // Force light mode for auth page
+  useEffect(() => {
+    const html = document.documentElement;
+    const originalClasses = html.className;
+    
+    // Remove dark class and force light mode
+    html.classList.remove('dark');
+    
+    // Cleanup function to restore original theme when leaving the page
+    return () => {
+      // Restore the original theme when component unmounts
+      const savedTheme = localStorage.getItem('app-theme') || 'basic';
+      if (savedTheme === 'dark' || savedTheme === 'occ-dark') {
+        html.classList.add('dark');
+      }
+    };
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
