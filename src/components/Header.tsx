@@ -1,3 +1,4 @@
+
 import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -47,7 +48,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
   };
 
   return (
-    <header className="bg-white shadow-sm border-b">
+    <header className="bg-card shadow-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-3">
@@ -55,17 +56,17 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
               <Phone className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-semibold text-gray-900">OCC Secure Dialer</h1>
-              <p className="text-sm text-gray-600">Privacy-focused calling solution</p>
+              <h1 className="text-xl font-semibold text-card-foreground">OCC Secure Dialer</h1>
+              <p className="text-sm text-muted-foreground">Privacy-focused calling solution</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-sm text-gray-600">System Ready</span>
+              <span className="text-sm text-muted-foreground">System Ready</span>
             </div>
             {user && (
-              <span className="text-sm text-gray-600 hidden sm:block">
+              <span className="text-sm text-muted-foreground hidden sm:block">
                 Welcome, {user.first_name || user.email}
               </span>
             )}
@@ -78,7 +79,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
           </div>
         </div>
         
-        <nav className="border-b">
+        <nav className="border-b border-border">
           {isAdmin ? (
             <>
               {/* Mobile dropdown */}
@@ -124,7 +125,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
                         className={`flex items-center space-x-2 px-6 py-3 border-b-2 transition-colors whitespace-nowrap ${
                           activeTab === tab.id
                             ? "border-green-500 text-green-600 bg-green-50"
-                            : "border-transparent text-gray-600 hover:text-gray-900"
+                            : "border-transparent text-muted-foreground hover:text-card-foreground"
                         }`}
                       >
                         <IconComponent className="w-4 h-4" />
@@ -142,7 +143,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
                 className={`flex items-center space-x-2 px-6 py-3 border-b-2 transition-colors ${
                   activeTab === "dialer"
                     ? "border-green-500 text-green-600 bg-green-50"
-                    : "border-transparent text-gray-600 hover:text-gray-900"
+                    : "border-transparent text-muted-foreground hover:text-card-foreground"
                 }`}
               >
                 <Users className="w-4 h-4" />
