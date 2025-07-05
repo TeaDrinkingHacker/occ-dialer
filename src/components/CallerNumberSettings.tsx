@@ -153,7 +153,8 @@ const CallerNumberSettings = () => {
             <Button
               onClick={handleSave}
               disabled={isSaving || !callerNumber.trim()}
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-2 bg-green-500/10 text-green-600 hover:bg-green-500/20 border border-green-500/20"
+              variant="outline"
             >
               <Save className="w-4 h-4" />
               <span>{isSaving ? "Saving..." : "Save"}</span>
