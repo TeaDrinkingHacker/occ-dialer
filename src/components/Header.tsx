@@ -1,4 +1,3 @@
-
 import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -142,7 +141,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
                 onClick={() => setActiveTab("dialer")}
                 className={`flex items-center space-x-2 px-6 py-3 border-b-2 transition-colors ${
                   activeTab === "dialer"
-                    ? "border-green-500 text-green-600 bg-green-50"
+                    ? "border-green-500 text-green-600 bg-green-500/10"
                     : "border-transparent text-muted-foreground hover:text-card-foreground"
                 }`}
               >
