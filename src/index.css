@@ -141,7 +141,7 @@
   background-color: hsl(142 71% 45%) !important;
 }
 
-/* Auth page override - force light theme styles */
+/* Auth page override - force light theme styles and green colors */
 .auth-page-override {
   background-color: rgb(249 250 251) !important;
   color: rgb(17 24 39) !important;
@@ -151,11 +151,23 @@
   color: inherit !important;
 }
 
+/* Ensure green background for phone icon and buttons on auth page */
 .auth-page-override .bg-green-500 {
   background-color: hsl(142 71% 45%) !important;
 }
 
-.auth-page-override .text-white {
+/* Ensure white text on green backgrounds */
+.auth-page-override .bg-green-500 .text-white,
+.auth-page-override .bg-green-500 * {
+  color: rgb(255 255 255) !important;
+}
+
+/* Ensure primary buttons (Sign In button) have proper styling */
+.auth-page-override .bg-primary {
+  background-color: hsl(222.2 47.4% 11.2%) !important;
+}
+
+.auth-page-override .text-primary-foreground {
   color: rgb(255 255 255) !important;
 }
 
