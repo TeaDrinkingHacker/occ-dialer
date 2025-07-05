@@ -101,19 +101,24 @@
   }
 }
 
-/* OCC Basic Theme - Override green buttons to red */
-.occ-basic-theme .bg-green-500 {
+/* OCC Basic Theme - Override green buttons to red but keep status indicators green */
+.occ-basic-theme .bg-green-500:not(.system-status) {
   background-color: hsl(0 85% 45%) !important;
 }
 
-.occ-basic-theme .hover\:bg-green-600:hover {
+.occ-basic-theme .hover\:bg-green-600:hover:not(.system-status) {
   background-color: hsl(0 85% 40%) !important;
 }
 
-.occ-basic-theme .bg-green-400 {
+.occ-basic-theme .bg-green-400:not(.system-status) {
   background-color: hsl(0 85% 50%) !important;
 }
 
-.occ-basic-theme .hover\:bg-green-400:hover {
+.occ-basic-theme .hover\:bg-green-400:hover:not(.system-status) {
   background-color: hsl(0 85% 45%) !important;
+}
+
+/* Ensure system status dot stays green */
+.system-status {
+  background-color: hsl(142 71% 45%) !important;
 }

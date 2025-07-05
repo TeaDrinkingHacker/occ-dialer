@@ -1,4 +1,3 @@
-
 import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -62,7 +61,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
           </div>
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-green-500 system-status rounded-full"></div>
               <span className="text-sm text-muted-foreground">System Ready</span>
             </div>
             {user && (
