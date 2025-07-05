@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -98,4 +99,21 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* OCC Basic Theme - Override green buttons to red */
+.occ-basic-theme .bg-green-500 {
+  background-color: hsl(0 85% 45%) !important;
+}
+
+.occ-basic-theme .hover\:bg-green-600:hover {
+  background-color: hsl(0 85% 40%) !important;
+}
+
+.occ-basic-theme .bg-green-400 {
+  background-color: hsl(0 85% 50%) !important;
+}
+
+.occ-basic-theme .hover\:bg-green-400:hover {
+  background-color: hsl(0 85% 45%) !important;
 }

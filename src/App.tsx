@@ -19,9 +19,11 @@ const App = () => {
   useEffect(() => {
     const applyTheme = (themeId: string) => {
       const html = document.documentElement;
+      const body = document.body;
       
       // Remove existing theme classes
       html.classList.remove('dark');
+      body.classList.remove('occ-basic-theme');
       
       // Apply theme based on selection
       switch (themeId) {
@@ -29,8 +31,10 @@ const App = () => {
         case 'occ-dark':
           html.classList.add('dark');
           break;
-        case 'basic':
         case 'occ-basic':
+          body.classList.add('occ-basic-theme');
+          break;
+        case 'basic':
         default:
           // Light theme is default, no additional classes needed
           break;
