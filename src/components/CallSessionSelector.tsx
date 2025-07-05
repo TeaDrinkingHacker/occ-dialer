@@ -13,7 +13,7 @@ const CallSessionSelector = ({ callSessions, selectedCallSessionId, onCallSessio
     return (
       <div className="mb-6">
         <div className="flex items-center gap-4">
-          <label htmlFor="call-session" className="text-sm font-medium text-gray-700">
+          <label htmlFor="call-session" className="text-sm font-medium text-card-foreground">
             Select Call Session:
           </label>
           <div className="w-80 px-3 py-2 bg-gray-100 border border-gray-300 rounded-md text-sm text-gray-500">
@@ -30,7 +30,7 @@ const CallSessionSelector = ({ callSessions, selectedCallSessionId, onCallSessio
   return (
     <div className="mb-6">
       <div className="flex items-center gap-4">
-        <label htmlFor="call-session" className="text-sm font-medium text-gray-700">
+        <label htmlFor="call-session" className="text-sm font-medium text-card-foreground">
           Select Call Session:
         </label>
         <Select value={selectedCallSessionId || ""} onValueChange={onCallSessionChange}>
