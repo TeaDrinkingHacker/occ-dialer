@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -7,10 +6,12 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/hooks/useAuth';
 
 const AppearancePage = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { user } = useAuth();
   const [selectedTheme, setSelectedTheme] = useState('basic');
 
   // Initialize theme from localStorage or default to 'basic'
@@ -88,13 +89,21 @@ const AppearancePage = () => {
       description: "Your appearance preferences have been saved.",
     });
     
-    // Navigate back to the main dashboard instead of using navigate(-1)
-    navigate('/');
+    // Navigate to admin dashboard if user is admin, otherwise to main dashboard
+    if (user?.role === 'admin') {
+      navigate('/admin');
+    } else {
+      navigate('/');
+    }
   };
 
   const handleCancel = () => {
-    // Navigate back to the main dashboard instead of using navigate(-1)
-    navigate('/');
+    // Navigate to admin dashboard if user is admin, otherwise to main dashboard
+    if (user?.role === 'admin') {
+      navigate('/admin');
+    } else {
+      navigate('/');
+    }
   };
 
   return (
