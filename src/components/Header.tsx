@@ -1,3 +1,4 @@
+
 import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -22,12 +23,14 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-  const [isOccBasicTheme, setIsOccBasicTheme] = useState(false);
+  const [isOccTheme, setIsOccTheme] = useState(false);
 
-  // Check for OCC Basic theme
+  // Check for OCC themes (both basic and dark)
   useEffect(() => {
     const checkTheme = () => {
-      setIsOccBasicTheme(document.body.classList.contains('occ-basic-theme'));
+      const isOccBasic = document.body.classList.contains('occ-basic-theme');
+      const isOccDark = document.body.classList.contains('occ-dark-theme');
+      setIsOccTheme(isOccBasic || isOccDark);
     };
     
     checkTheme();
@@ -67,7 +70,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-3">
-            {isOccBasicTheme ? (
+            {isOccTheme ? (
               <div className="w-12 h-12 rounded-lg overflow-hidden">
                 <img 
                   src="/lovable-uploads/8a49b33f-1191-4379-9e00-11217f4455fa.png" 

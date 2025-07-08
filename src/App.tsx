@@ -23,16 +23,19 @@ const App = () => {
       
       // Remove existing theme classes
       html.classList.remove('dark');
-      body.classList.remove('occ-basic-theme');
+      body.classList.remove('occ-basic-theme', 'occ-dark-theme');
       
       // Apply theme based on selection
       switch (themeId) {
         case 'dark':
-        case 'occ-dark':
           html.classList.add('dark');
           break;
         case 'occ-basic':
           body.classList.add('occ-basic-theme');
+          break;
+        case 'occ-dark':
+          html.classList.add('dark');
+          body.classList.add('occ-dark-theme');
           break;
         case 'basic':
         default:
