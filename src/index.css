@@ -148,9 +148,9 @@
   background-color: hsl(0 85% 45%) !important;
 }
 
-/* OCC Dark Theme - Override green tab styles to red with translucent background */
+/* OCC Dark Theme - Override green tab styles to translucent red */
 .occ-dark-theme .bg-green-50 {
-  background-color: hsl(0 85% 45% / 0.15) !important;
+  background-color: hsl(0 85% 45% / 0.2) !important;
 }
 
 .occ-dark-theme .text-green-600 {
