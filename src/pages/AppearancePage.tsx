@@ -87,7 +87,14 @@ const AppearancePage = () => {
       title: "Settings Saved",
       description: "Your appearance preferences have been saved.",
     });
-    navigate(-1);
+    
+    // Navigate back to the main dashboard instead of using navigate(-1)
+    navigate('/');
+  };
+
+  const handleCancel = () => {
+    // Navigate back to the main dashboard instead of using navigate(-1)
+    navigate('/');
   };
 
   return (
@@ -97,7 +104,7 @@ const AppearancePage = () => {
           <Button 
             variant="ghost" 
             size="sm" 
-            onClick={() => navigate(-1)}
+            onClick={handleCancel}
             className="flex items-center gap-2"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -134,7 +141,7 @@ const AppearancePage = () => {
         </div>
 
         <div className="flex justify-end gap-4">
-          <Button variant="outline" onClick={() => navigate(-1)}>
+          <Button variant="outline" onClick={handleCancel}>
             Cancel
           </Button>
           <Button onClick={handleSaveChanges}>
