@@ -74,7 +74,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
               <div className="w-10 h-10 rounded-lg overflow-hidden">
                 <img 
                   src={document.body.classList.contains('occ-basic-theme') 
-                    ? "/lovable-uploads/e5ad01eb-9bb8-4ad5-9c93-1eaedcc383e9.png"
+                    ? "/lovable-uploads/15661005-dc66-48a9-ac31-282232f7af2c.png"
                     : "/lovable-uploads/8a49b33f-1191-4379-9e00-11217f4455fa.png"
                   }
                   alt="OCC Logo" 
