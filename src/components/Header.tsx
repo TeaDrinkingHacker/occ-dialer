@@ -71,7 +71,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-3">
             {isOccTheme ? (
-              <div className="w-12 h-12 rounded-lg overflow-hidden">
+              <div className="w-10 h-10 rounded-lg overflow-hidden">
                 <img 
                   src={document.body.classList.contains('occ-basic-theme') 
                     ? "/lovable-uploads/e5ad01eb-9bb8-4ad5-9c93-1eaedcc383e9.png"
