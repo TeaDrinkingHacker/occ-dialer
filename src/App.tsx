@@ -15,11 +15,13 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Initialize theme on app startup
+  // Initialize theme on app startup and ensure persistence
   useEffect(() => {
     const applyTheme = (themeId: string) => {
       const html = document.documentElement;
       const body = document.body;
+      
+      console.log('Applying theme:', themeId);
       
       // Remove existing theme classes
       html.classList.remove('dark');
@@ -46,7 +48,22 @@ const App = () => {
 
     // Load saved theme from localStorage on app startup
     const savedTheme = localStorage.getItem('app-theme') || 'basic';
+    console.log('App startup - loading saved theme:', savedTheme);
     applyTheme(savedTheme);
+
+    // Set up a storage event listener to handle theme changes from other tabs
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'app-theme' && e.newValue) {
+        console.log('Theme changed in another tab:', e.newValue);
+        applyTheme(e.newValue);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, []);
 
   return (

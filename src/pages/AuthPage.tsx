@@ -36,13 +36,13 @@ const AuthPage = () => {
     const html = document.documentElement;
     const body = document.body;
     
-    // Store original classes
-    const originalHtmlClasses = html.className;
-    const originalBodyClasses = body.className;
+    // Store original classes to restore later
+    const originalHtmlClasses = Array.from(html.classList);
+    const originalBodyClasses = Array.from(body.classList);
     
-    // Force light mode - remove dark class and OCC theme
+    // Force light mode - remove dark class and OCC themes
     html.classList.remove('dark');
-    body.classList.remove('occ-basic-theme');
+    body.classList.remove('occ-basic-theme', 'occ-dark-theme');
     
     // Add a specific class to override any theme styles
     body.classList.add('auth-page-override');
@@ -52,21 +52,25 @@ const AuthPage = () => {
       // Remove our override class
       body.classList.remove('auth-page-override');
       
-      // Restore the original theme when component unmounts
+      // Restore the saved theme properly
       const savedTheme = localStorage.getItem('app-theme') || 'basic';
+      console.log('Restoring theme on auth page cleanup:', savedTheme);
       
-      // Remove existing theme classes
+      // Clear all theme classes first
       html.classList.remove('dark');
-      body.classList.remove('occ-basic-theme');
+      body.classList.remove('occ-basic-theme', 'occ-dark-theme');
       
       // Apply saved theme
       switch (savedTheme) {
         case 'dark':
-        case 'occ-dark':
           html.classList.add('dark');
           break;
         case 'occ-basic':
           body.classList.add('occ-basic-theme');
+          break;
+        case 'occ-dark':
+          html.classList.add('dark');
+          body.classList.add('occ-dark-theme');
           break;
         case 'basic':
         default:
