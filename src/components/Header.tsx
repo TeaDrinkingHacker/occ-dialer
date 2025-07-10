@@ -65,6 +65,9 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
     return activeTabInfo ? activeTabInfo.label : "Menu";
   };
 
+  const isOccBasicTheme = document.body.classList.contains('occ-basic-theme');
+  const isOccDarkTheme = document.body.classList.contains('occ-dark-theme');
+
   return (
     <header className="bg-card shadow-sm border-b border-border">
       <div className="container mx-auto px-4">
@@ -73,13 +76,13 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
             {isOccTheme ? (
               <div className="w-10 h-10 rounded-lg overflow-hidden">
                 <img 
-                  src={document.body.classList.contains('occ-basic-theme') 
+                  src={isOccBasicTheme 
                     ? "/lovable-uploads/15661005-dc66-48a9-ac31-282232f7af2c.png"
                     : "/lovable-uploads/98a6a54a-36a7-4dd0-b3b9-011124cf273b.png"
                   }
                   alt="OCC Logo" 
                   className="w-full h-full object-contain"
-                  style={{ 
+                  style={isOccDarkTheme ? {} : { 
                     filter: 'drop-shadow(0 0 0 transparent)',
                     background: 'transparent'
                   }}
