@@ -180,40 +180,54 @@
   background-color: hsl(142 71% 45%) !important;
 }
 
-/* Auth page override - force light theme styles and green colors */
-.auth-page-override {
+/* Auth page override - force light theme styles and green colors with highest specificity */
+body.auth-page-override {
   background-color: rgb(249 250 251) !important;
   color: rgb(17 24 39) !important;
 }
 
-.auth-page-override * {
+body.auth-page-override * {
   color: inherit !important;
 }
 
-/* Ensure green background for phone icon and buttons on auth page */
-.auth-page-override .bg-green-500 {
+/* Override ALL theme styles on auth page - force green colors */
+body.auth-page-override .bg-green-500,
+body.auth-page-override.occ-basic-theme .bg-green-500,
+body.auth-page-override.occ-dark-theme .bg-green-500 {
   background-color: hsl(142 71% 45%) !important;
 }
 
 /* Ensure white text on green backgrounds */
-.auth-page-override .bg-green-500 .text-white,
-.auth-page-override .bg-green-500 * {
+body.auth-page-override .bg-green-500 .text-white,
+body.auth-page-override .bg-green-500 *,
+body.auth-page-override.occ-basic-theme .bg-green-500 .text-white,
+body.auth-page-override.occ-basic-theme .bg-green-500 *,
+body.auth-page-override.occ-dark-theme .bg-green-500 .text-white,
+body.auth-page-override.occ-dark-theme .bg-green-500 * {
   color: rgb(255 255 255) !important;
 }
 
 /* Ensure primary buttons (Sign In button) have proper styling */
-.auth-page-override .bg-primary {
+body.auth-page-override .bg-primary,
+body.auth-page-override.occ-basic-theme .bg-primary,
+body.auth-page-override.occ-dark-theme .bg-primary {
   background-color: hsl(222.2 47.4% 11.2%) !important;
 }
 
-.auth-page-override .text-primary-foreground {
+body.auth-page-override .text-primary-foreground,
+body.auth-page-override.occ-basic-theme .text-primary-foreground,
+body.auth-page-override.occ-dark-theme .text-primary-foreground {
   color: rgb(255 255 255) !important;
 }
 
-.auth-page-override .text-gray-900 {
+body.auth-page-override .text-gray-900,
+body.auth-page-override.occ-basic-theme .text-gray-900,
+body.auth-page-override.occ-dark-theme .text-gray-900 {
   color: rgb(17 24 39) !important;
 }
 
-.auth-page-override .text-blue-600 {
+body.auth-page-override .text-blue-600,
+body.auth-page-override.occ-basic-theme .text-blue-600,
+body.auth-page-override.occ-dark-theme .text-blue-600 {
   color: rgb(37 99 235) !important;
 }
