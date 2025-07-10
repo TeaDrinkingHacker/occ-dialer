@@ -1,4 +1,3 @@
-
 import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -82,7 +81,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
                   }
                   alt="OCC Logo" 
                   className="w-full h-full object-contain"
-                  style={isOccDarkTheme ? {} : { 
+                  style={{ 
                     filter: 'drop-shadow(0 0 0 transparent)',
                     background: 'transparent'
                   }}
