@@ -1,0 +1,39 @@
+
+/* OCC Dark Theme - Override green buttons to red but keep status indicators green */
+.occ-dark-theme .bg-green-500:not(.system-status) {
+  background-color: hsl(0 85% 45%) !important;
+}
+
+.occ-dark-theme .hover\:bg-green-600:hover:not(.system-status) {
+  background-color: hsl(0 85% 40%) !important;
+}
+
+.occ-dark-theme .bg-green-400:not(.system-status) {
+  background-color: hsl(0 85% 50%) !important;
+}
+
+.occ-dark-theme .hover\:bg-green-400:hover:not(.system-status) {
+  background-color: hsl(0 85% 45%) !important;
+}
+
+/* OCC Dark Theme - Make tabs red with translucent red background */
+.occ-dark-theme .bg-green-50 {
+  background-color: hsl(0 85% 45% / 0.1) !important;
+}
+
+.occ-dark-theme .text-green-600 {
+  color: hsl(0 85% 60%) !important;
+}
+
+.occ-dark-theme .border-green-500 {
+  border-color: hsl(0 85% 45%) !important;
+}
+
+/* Additional override to ensure red styling for tabs */
+.occ-dark-theme button.bg-green-50 {
+  background-color: hsl(0 85% 45% / 0.1) !important;
+}
+
+.occ-dark-theme button[class*="bg-green"] {
+  background-color: hsl(0 85% 45% / 0.1) !important;
+}
