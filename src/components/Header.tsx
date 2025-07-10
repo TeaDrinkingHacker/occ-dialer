@@ -75,7 +75,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
                 <img 
                   src={document.body.classList.contains('occ-basic-theme') 
                     ? "/lovable-uploads/15661005-dc66-48a9-ac31-282232f7af2c.png"
-                    : "/lovable-uploads/16220fb4-88ed-44eb-b204-ec3bb30784d8.png"
+                    : "/lovable-uploads/98a6a54a-36a7-4dd0-b3b9-011124cf273b.png"
                   }
                   alt="OCC Logo" 
                   className="w-full h-full object-contain"
