@@ -1,3 +1,4 @@
+
 import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -64,21 +65,15 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
     return activeTabInfo ? activeTabInfo.label : "Menu";
   };
 
-  const isOccBasicTheme = document.body.classList.contains('occ-basic-theme');
-  const isOccDarkTheme = document.body.classList.contains('occ-dark-theme');
-
   return (
     <header className="bg-card shadow-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-3">
             {isOccTheme ? (
-              <div className="w-10 h-10 rounded-lg overflow-hidden">
+              <div className="w-10 h-10 flex items-center justify-center">
                 <img 
-                  src={isOccBasicTheme 
-                    ? "/lovable-uploads/15661005-dc66-48a9-ac31-282232f7af2c.png"
-                    : "/lovable-uploads/98a6a54a-36a7-4dd0-b3b9-011124cf273b.png"
-                  }
+                  src="/lovable-uploads/b0342294-c464-45bd-b442-8ff081b155bb.png"
                   alt="OCC Logo" 
                   className="w-full h-full object-contain"
                   style={{ 
