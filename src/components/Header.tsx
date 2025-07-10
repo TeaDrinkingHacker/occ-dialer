@@ -1,3 +1,4 @@
+
 import { Phone, Upload, Users, FileText, LogOut, MessageSquare, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -74,7 +75,7 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
                 <img 
                   src={document.body.classList.contains('occ-basic-theme') 
                     ? "/lovable-uploads/15661005-dc66-48a9-ac31-282232f7af2c.png"
-                    : "/lovable-uploads/8f22ed83-7cd3-4b00-8778-439722706bd0.png"
+                    : "/lovable-uploads/0574ed5b-6deb-44fd-9362-c13b209be6e3.png"
                   }
                   alt="OCC Logo" 
                   className="w-full h-full object-contain"
