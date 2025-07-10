@@ -73,20 +73,14 @@ const Header = ({ activeTab, setActiveTab, isAdmin = false }: HeaderProps) => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-3">
             {isOccTheme ? (
-              <div className="w-10 h-10 rounded-lg overflow-hidden">
-                <img 
-                  src={isOccBasicTheme 
-                    ? "/lovable-uploads/15661005-dc66-48a9-ac31-282232f7af2c.png"
-                    : "/lovable-uploads/98a6a54a-36a7-4dd0-b3b9-011124cf273b.png"
-                  }
-                  alt="OCC Logo" 
-                  className="w-full h-full object-contain"
-                  style={{ 
-                    filter: 'drop-shadow(0 0 0 transparent)',
-                    background: 'transparent'
-                  }}
-                />
-              </div>
+              <img 
+                src={isOccBasicTheme 
+                  ? "/lovable-uploads/15661005-dc66-48a9-ac31-282232f7af2c.png"
+                  : "/lovable-uploads/98a6a54a-36a7-4dd0-b3b9-011124cf273b.png"
+                }
+                alt="OCC Logo" 
+                className="w-10 h-10 object-contain"
+              />
             ) : (
               <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                 <Phone className="w-5 h-5 text-white" />
