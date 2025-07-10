@@ -6,7 +6,7 @@ import type {
 } from "@/components/ui/toast"
 
 const TOAST_LIMIT = 1
-const TOAST_REMOVE_DELAY = 2000 // Increased to 2 seconds to account for animation timing
+const TOAST_REMOVE_DELAY = 4000 // 4 seconds total: 3s visible + 1s for animations
 
 type ToasterToast = ToastProps & {
   id: string
@@ -63,7 +63,7 @@ const addToRemoveQueue = (toastId: string) => {
   const timeout = setTimeout(() => {
     toastTimeouts.delete(toastId)
     dispatch({
-      type: "REMOVE_TOAST",
+      type: "DISMISS_TOAST",
       toastId: toastId,
     })
   }, TOAST_REMOVE_DELAY)
@@ -160,6 +160,11 @@ function toast({ ...props }: Toast) {
       },
     },
   })
+
+  // Auto-dismiss after 3 seconds
+  setTimeout(() => {
+    dismiss()
+  }, 3000)
 
   return {
     id: id,
